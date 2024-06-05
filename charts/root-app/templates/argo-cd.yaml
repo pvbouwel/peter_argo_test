@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: argo-cd
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,8 +9,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pvbouwel/peter_argo_test.git
-    path: charts/root-app/
+    path: charts/argo-cd
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
