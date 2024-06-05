@@ -1,0 +1,9 @@
+{{- range $.Values.sparkJobNamespaces }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: {{ . | quote}}
+  name: {{ . | quote}}
+{{- end }}  
