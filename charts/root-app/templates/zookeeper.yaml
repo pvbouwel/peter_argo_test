@@ -14,10 +14,10 @@ spec:
     helm:
       valueFiles:
       - values.yaml
-      - values{{ $envsuffix }}.yaml
+      - values-{{ .Values.env }}.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: zookeeper{{ $envsuffix }}
+    namespace: zookeeper{{ .Values.env }}
   syncPolicy:
     automated:
       selfHeal: true
