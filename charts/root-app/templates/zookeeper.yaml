@@ -17,7 +17,7 @@ spec:
       - values-{{ .Values.env }}.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: zookeeper{{ .Values.env }}
+    namespace: zookeeper-{{ .Values.env }}
   syncPolicy:
     automated:
       selfHeal: true
