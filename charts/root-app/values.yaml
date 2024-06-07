@@ -1,0 +1,4 @@
+# How you identify your environment. This to allow multi-tenancy on a Kubernetes clusters
+# For example dev/staging/prod
+# minikube is an environment to run locally
+env: minikube

@@ -1,0 +1,13 @@
+---
+global:
+  # https://minikube.sigs.k8s.io/docs/tutorials/volume_snapshots_and_csi/
+  storageClass: "csi-hostpath-sc"
+replicaCount: 1
+autopurge:
+  purgeInterval: 1
+persistence:
+  storageClass: "csi-hostpath-sc"
+  size: "1Gi"
+resources:
+  requests:
+    memory: "1024Mi"

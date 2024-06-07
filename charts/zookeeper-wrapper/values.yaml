@@ -1,0 +1,10 @@
+---
+metrics:
+  enabled: true
+# Prometheus rules not available for minikube
+# Service monitor not available for minikube
+  # serviceMonitor:
+  #   enabled: true
+jvmFlags: "-Djute.maxbuffer=0x400000 -XX:+ExitOnOutOfMemoryError"
+priorityClassName: system-cluster-critical
+podAntiAffinityPreset: hard
